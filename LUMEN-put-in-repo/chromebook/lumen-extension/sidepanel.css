@@ -1,0 +1,114 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #080808;
+  color: #f2f2ef;
+  min-height: 100vh;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.orb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #e8d080, #c4a032 45%, #6a5018);
+  box-shadow: 0 0 20px rgba(196, 160, 50, 0.35);
+  flex-shrink: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.orb.listening {
+  animation: pulse 1.2s ease-in-out infinite;
+  box-shadow: 0 0 28px rgba(196, 160, 50, 0.65);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+h1 { font-size: 1.05rem; font-weight: 600; color: #c4a032; }
+.sub { font-size: 0.75rem; color: #7a7a75; margin-top: 2px; }
+
+.primary {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #c4a032, #8a6820);
+  color: #0a0a0a;
+  cursor: pointer;
+}
+
+.primary:disabled { opacity: 0.45; cursor: wait; }
+.primary.listening {
+  background: #1a1810;
+  color: #c4a032;
+  border: 2px solid #c4a032;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #9a9a95;
+  cursor: pointer;
+}
+
+.card {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #5a5a55;
+  margin-bottom: 4px;
+}
+
+.transcript { font-size: 0.9rem; min-height: 1.4em; font-style: italic; color: #b0b0aa; }
+#status { font-size: 0.88rem; line-height: 1.4; color: #d8d8d3; }
+
+.quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(196, 160, 50, 0.35);
+  background: rgba(196, 160, 50, 0.08);
+  color: #c4a032;
+  cursor: pointer;
+}
+
+.chip:hover { background: rgba(196, 160, 50, 0.18); }
+
+footer {
+  margin-top: auto;
+  font-size: 0.75rem;
+  color: #8a8a85;
+  line-height: 1.5;
+}
+
+footer .dim { color: #5a5a55; margin-top: 4px; }
