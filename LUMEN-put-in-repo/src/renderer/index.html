@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <title>LUMEN Browser</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-logo" title="LUMEN Browser">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <defs>
+            <linearGradient id="prism" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00D4FF"/>
+              <stop offset="50%" stop-color="#6366F1"/>
+              <stop offset="100%" stop-color="#8B5CF6"/>
+            </linearGradient>
+          </defs>
+          <path d="M16 2 L28 8 L28 24 L16 30 L4 24 L4 8 Z" fill="#151B28" stroke="url(#prism)" stroke-width="1.5"/>
+          <path d="M16 8 L22 18 L16 24 L10 18 Z" fill="url(#prism)" opacity="0.9"/>
+        </svg>
+      </div>
+      <button class="sidebar-btn" id="btn-new-tab" title="New Tab (Ctrl+T)">+</button>
+      <button class="sidebar-btn" id="btn-bookmarks" title="Bookmarks">★</button>
+      <button class="sidebar-btn" id="btn-history" title="History">⏱</button>
+      <button class="sidebar-btn" id="btn-shields" title="Shields">🛡</button>
+      <div class="sidebar-spacer"></div>
+      <button class="sidebar-btn" id="btn-settings" title="Settings">⚙</button>
+    </aside>
+
+    <div class="main">
+      <header class="chrome">
+        <div id="tab-bar" class="tab-bar"></div>
+        <div class="toolbar">
+          <div class="nav-buttons">
+            <button id="btn-back" class="icon-btn" title="Back" disabled>←</button>
+            <button id="btn-forward" class="icon-btn" title="Forward" disabled>→</button>
+            <button id="btn-reload" class="icon-btn" title="Reload">↻</button>
+          </div>
+          <div class="omnibox-wrap">
+            <span id="secure-icon" class="secure-icon secure">🔒</span>
+            <input id="omnibox" class="omnibox" type="text" placeholder="Search DuckDuckGo or enter address" spellcheck="false" autocomplete="off" />
+            <button id="btn-bookmark-page" class="icon-btn small" title="Bookmark this page">☆</button>
+          </div>
+          <div class="toolbar-right">
+            <span id="shields-badge" class="shields-badge" title="Trackers blocked">🛡 0</span>
+            <span id="ghost-badge" class="ghost-badge hidden">Ghost</span>
+          </div>
+        </div>
+      </header>
+
+      <div id="panel" class="panel hidden">
+        <div class="panel-header">
+          <h2 id="panel-title">Panel</h2>
+          <button id="panel-close" class="icon-btn">✕</button>
+        </div>
+        <div id="panel-content" class="panel-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
