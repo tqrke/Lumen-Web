@@ -1,9 +1,0 @@
-{
-  "name": "lumen-browser",
-  "version": "2.0.0",
-  "description": "LUMEN native browser — use Python, not npm. Run: python app.py",
-  "private": true,
-  "scripts": {
-    "start": "echo Use: python app.py && exit 1"
-  }
-}
