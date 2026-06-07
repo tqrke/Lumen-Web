@@ -747,10 +747,8 @@ footer{
   const WIN_ZIP = 'LUMEN-Browser-5.0.0-win64.zip';
   const CB_ZIP  = 'LUMEN-Chromebook-1.0.0.zip';
   const releaseBase = 'https://github.com/' + GH_USER + '/' + GH_REPO + '/releases/latest/download/';
-  const localBase = location.protocol === 'file:'
-    ? 'file:///C:/Users/joshr/.cursor/projects/empty-window/lumen-browser/dist/'
-    : '../dist/';
   const useLocal = location.protocol === 'file:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  const localBase = 'file:///C:/Users/joshr/.cursor/projects/empty-window/lumen-browser/dist/';
   const DL = {
     win: (useLocal ? localBase : releaseBase) + WIN_ZIP,
     cb:  (useLocal ? localBase : releaseBase) + CB_ZIP
